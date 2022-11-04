@@ -1,0 +1,4 @@
+<h1>Tag list</h1>
+{% for t in tags %}
+<li><a href="{% url 'questions:tag' t.id %}">{{ t }}</a></li>
+{% endfor %}

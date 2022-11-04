@@ -1,0 +1,6 @@
+!*.py
+!*.html
+!*.css
+!*.md
+*.sqlite3
+leetqual/settings.py

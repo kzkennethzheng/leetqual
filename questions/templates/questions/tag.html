@@ -1,0 +1,4 @@
+<h1>Tag: {{ questions_with_tag.0 }}</h1>
+{% for q in questions_with_tag.1 %}
+<li><a href="{% url 'questions:detail' q.id %}">{{ q }}: {{ q.question_text }}</a></li>
+{% endfor %}

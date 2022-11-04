@@ -1,0 +1,21 @@
+li a {
+    color: green;
+}
+
+.tagcloud {
+    border: 1px solid black;
+    margin: 20px;
+    padding: 20px;
+    background-color:#d1f8ff;
+    max-width: 250px;
+    border-radius: 12px;
+}
+
+.panel-heading {
+    border-bottom: 1px solid black;
+}
+
+input[type=text] {
+    width: 85%;
+    font-size: 16px;
+}

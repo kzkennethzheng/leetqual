@@ -1,0 +1,52 @@
+{% load static tag_extras %}
+<link rel="stylesheet" href="{% static 'questions/style.css' %}">
+
+<h1>Qual Questions</h1>
+
+<form action="{% url 'questions:search_results' %}" method="get">
+    <input name="q" type="text" placeholder="Search" size=100>
+</form>
+
+<h2><a href="{% url 'questions:random' %}">Random Question</a></h2>
+
+<div style="display: flex; justify-content: space-around">
+    <div class="container">
+        <div class="panel-heading"><h2>Most recent:</h2></div>
+        {% if latest_question_list %}
+            <ul>
+                {% for question in latest_question_list %}
+                    <li><a href="{% url 'questions:detail' question.id %}">{{ question}}: {{ question.question_text }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p> No questions are available.</p>
+        {% endif %}
+    </div>
+    <div class="tagcloud">
+        <div class="row">
+            <div class="col-md-12">
+                {% block heading %}{% endblock %}
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                {% block content %}{% endblock %}
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Tag cloud:</div>
+                    <div class="panel-body">
+                        {% block sidebar %}
+                            {% tagcloud %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<hr>

@@ -1,0 +1,23 @@
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <h1>{{ question }}</h1>
+    <p>{{ question.question_text }}</p>
+
+</body>
